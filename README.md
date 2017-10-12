@@ -1,25 +1,23 @@
-# Shadow Perl IRC Bot
-  Written by Aaron Blakely
+# Light, a fork from a flexable modulated IRC bot called Shadow
 
-## What is shadow?
-  shadow is a modular IRC bot written in Perl,
-  it's goal is to be a stable IRC bot with cool featues.
+-(Shadow)- The modular IRC bot written in Perl, created by ablakely 
 
-## How do I install shadow?
-  Just run install.pl, we'll do the rest!  (You will need
-  the perl JSON module off CPAN.)
+This here is a fork that focuses on module development, a collection of modules along with a few others for the original Shadow IRC Bot. These modules are able to be loaded and unload via command or manually added through the bots configuration file ( /etc/shadow.conf or /etc/shadow.conf.example if you have not already renamed the file)
 
-## Where can I get support for shadow?
-  * Try irc.bbsn.ca #ephasic
-  * `/msg bot help` 
+- Official Shadow Bot Repo:<b> https://github.com/ablakely/shadow </b>
 
----
+# Newly Added Modules:
 
-## Standard Modules
-* RSS.pm - RSS Feed Reader.
-* AutoID.pm - Automatically authenticate with network services.
-* ChanOP.pm - Basic channel management commands.
-* Uptime.pm - Basic module which gives *nix uptime info
-* Autojoin.pm - Automatically join channels on connect.
-* URLIdentifier.pm - Automatically fetches the title of a URL.
-* BotStats.pm - [Linux] Returns information about the bot, like memory usage.
+- <b>NoAllah.pm</b> - This module was created to take care of the excessive spamming of religious propaganda within our channhels, although it is pretty strict, a more refined version will be created that more accurately detects if they are in fact spamming or have a discussion about islam. Once more refined it will be less likely to kick/ban a user who was merely using the word allah with no relation to spam at all.
+
+- <b>iSeen.pm</b> - This is a new script under development that allows users to check when other frequent users were last online. It will provide the time, date and channel the user was last seen on by Light. Channel/Privatemsg Usage: .seen <nickname> 
+
+# Modules that came standard with Shadow:
+
+- <b>AutoID.pm</b>
+- <b>Autojoin.pm</b>
+- <b>BotStats.pm</b>
+- <b>ChanOP.pm</b>
+- <b>RSS.pm</b>
+- <b>URLIdentifier.pm</b> 
+- <b>Uptime.pm</b>
