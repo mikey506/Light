@@ -43,3 +43,5 @@ sub allah_id {
 
 sub unloader {
   $bot->del_handler('message channel', 'allah_id');
+}
+1;
