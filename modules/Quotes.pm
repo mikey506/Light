@@ -4,6 +4,7 @@ package Quotes;
 # Written by Michael landry
 
 my $bot  = Shadow::Core;
+use File::RandomLine;
 my $rl = File::RandomLine->new( "~/quotes" );
 
 sub loader {
