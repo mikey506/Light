@@ -1,13 +1,12 @@
 # Shadow Configuration File
 # Written by Aaron Blakely
 
-
 @Shadow
 
 [IRC]
-bot.host	   = [irc-nb.bbsn.ca:6667]
-bot.nick	   = "Shadow"
-bot.name	   = "shadow"
+bot.host	   = [irc.bbsn.ca:6667]
+bot.nick	   = "Light"
+bot.name	   = "Power"
 bot.channels   = [#chan1,#chan2,#etc]
 
 # bot.cmdchan - Bot logging/control channel
@@ -15,7 +14,7 @@ bot.cmdchan  = "#botcmd"
 
 [Bot]
 system.daemonize	= no
-system.modules      = [ChanOP,AutoID]
+system.modules      = [RSS,ChanOP,AutoID]
 
 [Admin]
 # Comma separated list of hostnames (wildcards are accepted)
