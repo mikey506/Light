@@ -8,8 +8,8 @@
 
 package Quotes;
 
-# Quotes.pm - Random Quote Generator ( .quote )
-# Written by Michael landry
+use strict;
+use warnings;
 
 my $bot  = Shadow::Core;
 use File::RandomLine;
@@ -29,8 +29,14 @@ sub doQuote {
   $line = $rl->next();
   $bot->say($chan, "Your random Quote $nick : $line" );
 }
-
+sub doAddQuote {
+  my ($nick, $host, $chan, $text) = @_;
+  open(my $fd, ">>./quotes");
+  print $fd "$text";
+  $bot->say($chan, "Added Following Quote: $text");
+}
 sub unloader {
   $bot->del_handler('chancmd quote', 'doQuote');
+  $bot->del_handler('chancmd addquote', 'doQuote');
 }
 1;
