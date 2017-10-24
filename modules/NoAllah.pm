@@ -35,8 +35,7 @@ sub allah_id {
     $bot->say($chan, "The word Allah is not permitted here, let this be a warning  (NoAllah-Mod)");
     $bot->kick($chan, $nick, "Allah is not allowed to be promoted here through bot spam, stop pushing your beliefs on others.");
     $bot->mode($chan, "+b", $nick);
-    print "[NoAllah-Mod] Allah Detected ( $chan )( $nick ) ( $host ) >>  Kicked & Banned.\n";
-    print "[NoAllah-Mod] (UserInfo) User: $nick Host: $host \n"; 
+    print "[NoAllah-Mod] *Trigger* (User Info) User: $nick Host: $host \n"; 
     $bot->say($nick, "Smarten the fuck up and stop spamming");
   }
 }
