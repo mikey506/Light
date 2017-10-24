@@ -8,8 +8,6 @@
 
 package Quotes;
 
-use warnings;
-
 my $bot  = Shadow::Core;
 use File::RandomLine;
 my $rl = File::RandomLine->new( "./quotes" );
@@ -30,9 +28,10 @@ sub doQuote {
   $bot->say($chan, "Your random Quote $nick : $line" );
 }
 sub doAddQuote {
-  my ($nick, $host, $chan, $text) = @_;
-  open(my $fd, ">>./quotes");
-  print $fd "$text";
+  my ($nick, $host, $chan, $text, $fh) = @_;
+  open(my $fh, '>>', $filename) or $bot->say($chan, "Could not open file $filename");
+  say $fh "$text"; 
+  close $fh;
   $bot->say($chan, "Added Following Quote: $text");
 }
 sub unloader {
