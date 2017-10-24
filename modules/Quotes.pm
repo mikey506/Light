@@ -8,7 +8,6 @@
 
 package Quotes;
 
-use strict;
 use warnings;
 
 my $bot  = Shadow::Core;
