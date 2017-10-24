@@ -16,6 +16,7 @@ my $rl = File::RandomLine->new( "./quotes" );
 
 sub loader {
   $bot->add_handler('chancmd quote', 'doQuote');
+  $bot->add_handler('chancmd addquote', 'doAddQuote');
   my ($nick, $host, $text) = @_;
   $bot->say($nick, "Help for \x02QUOTE\x02:");
   $bot->say($nick, "-------------------------");
@@ -36,6 +37,6 @@ sub doAddQuote {
 }
 sub unloader {
   $bot->del_handler('chancmd quote', 'doQuote');
-  $bot->del_handler('chancmd addquote', 'doQuote');
+  $bot->del_handler('chancmd addquote', 'doAddQuote');
 }
 1;
