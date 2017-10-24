@@ -1,3 +1,11 @@
+# Shadow Module: Quotes.pm
+# Random quotes fetched from local file
+#
+# Location of quote file: "./quotes" (Shadows root folder)
+# Usage: .quote
+#
+# Written by Michael Landry
+
 package Quotes;
 
 # Quotes.pm - Random Quote Generator ( .quote )
