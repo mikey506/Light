@@ -23,6 +23,8 @@ sub loader {
   $bot->add_handler('chancmd kick',  'chanop_kick');
   $bot->add_handler('chancmd ban',   'chanop_ban');
   $bot->add_handler('privcmd ban',   'chanop_ban');
+  $bot->add_handler('chancmd mode',   'chanop_mode');
+  $bot->add_handler('privcmd mode',   'chanop_mode');
 
   $help->add_help('op', 'Channel', '<user> <channel>', 'Give or removes operator mode to a user. [F]', 0, sub {
     my ($nick, $host, $text) = @_;
@@ -140,6 +142,21 @@ sub chanop_voice {
   }
 }
 
+sub chanop_mode {
+  my ($nick, $host, $chan, $text) = @_;
+  if (!$text) {
+    $text = $chan;
+  }
+  if ($bot->isbotadmin($nick, $host) || $bot->isop($nick, $chan)) {
+    my ($t, $m, $u) = split(/ /, $text);
+    $t = $chan if !$t;
+# mode event
+    my $mode = join(" ", @bits[2 .. scalar(@bits) - 1]) if defined $bits[2];
+    $mode .= $text if defined $text;
+    $bot->mode($t, $m, $u);
+  }
+}
+
 sub unloader {
   $bot->del_handler('chancmd op',    'chanop_op');
   $bot->del_handler('privcmd op',    'chanop_op');
@@ -149,6 +166,8 @@ sub unloader {
   $bot->del_handler('chancmd kick',  'chanop_kick');
   $bot->del_handler('chancmd ban',   'chanop_ban');
   $bot->del_handler('privcmd ban',   'chanop_ban');
+  $bot->del_handler('chancmd mode',  'chanop_mode');
+  $bot->del_handler('privcmd mode',  'chanop_mode');
 
 
   $help->del_help('op', 'Channel');
