@@ -1,3 +1,12 @@
+# Shadow Module: Welcome.pm
+#
+# This module simply sends a welcome message to the channel directed at any users who have just joined. Later
+# a function to have unique welcome message for each channel and also the ability to turn feature on and off.
+#
+# Usage: Event>Join = Trigger
+#
+# Written by Michael Landry <mikey@bbsn.ca>
+
 package Welcome;
 
 # Welcome Module
