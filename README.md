@@ -16,9 +16,9 @@ This here is a fork that focuses on module development, a collection of modules 
   
 - <b>Insults.pm</b> - This module insults a user you specify with a random line from "./insults". Usage .insult (nick)
 
-- <b>TXTctrl.pm</b> - Used to send text to channels or to users via private message. Usage (in private chat): tc (c/p) (channel/nick) (message) (incomplete)
+- <b>TXTctrl.pm</b> - Used to send text to channels or to users via private message. Usage (in private chat): tc (c/p) (channel/nick) (message) ==incomplete mod==
 
-- <b>Welcome.pm</b> - This mod sends a welcome message to channel if anyone that joins. Usage via private message:<b> tc (c/p) (channel/nick) (message)</b> ==incomplete mod==
+- <b>Welcome.pm</b> - This mod sends a welcome message to channel if anyone that joins. Usage via private message:<b> tc (c/p) (channel/nick) (message)</b> 
 
 # Modules that came standard with Shadow:
 - <b>Autojoin.pm</b>
