@@ -14,7 +14,9 @@ This here is a fork that focuses on module development, a collection of modules 
 
 - <b>Quotes.pm</b> - This module responds with a random quote from "<bot dir>/quotes" when user types ".quote". ".addquote" will be added as a function in the future.
   
-  <b>Insults.pm</b> - This module insults a user you specify with a random line from "./insults". Usage .insult <nick>
+- <b>Insults.pm</b> - This module insults a user you specify with a random line from "./insults". Usage .insult <nick>
+
+- <b>TXTctrl.pm</b> - Used to send text to channels or to users via private message. Usage (in private chat): tc <c/p> <channel/nick> <message> (incomplete)
 
 # Modules that came standard with Shadow:
 
