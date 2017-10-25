@@ -25,7 +25,7 @@ sub loader {
 sub doQuote {
   my ($nick, $host, $chan, $text) = @_;
   $line = $rl->next();
-  $bot->say($chan, "Your random Quote $nick : $line" );
+  $bot->say($chan, "$nick : $line" );
 }
 sub doAddQuote {
   my ($nick, $host, $chan, $text) = @_;
