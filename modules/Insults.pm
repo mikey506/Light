@@ -10,7 +10,7 @@ package Insults;
 
 my $bot  = Shadow::Core;
 use File::RandomLine;
-my $rl = File::RandomLine->new( "./insults" );
+my $rl = File::RandomLine->new( "./etc/insults" );
 
 sub loader {
   $bot->add_handler('chancmd insult', 'doInsult');
