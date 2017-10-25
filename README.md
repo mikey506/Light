@@ -22,7 +22,7 @@ This here is a fork that focuses on module development, a collection of modules 
 
 - <b>Autojoin.pm</b>
 - <b>BotStats.pm</b>
-- <b>ChanOP.pm</b> - Added ".mode" function, Usage: .mode <channel> <mode> <username>
+- <b>ChanOP.pm</b> - Added ".mode" function, Usage - <b>.mode <channel> <mode> <username></b>
 - <b>RSS.pm</b>
 - <b>URLIdentifier.pm</b> 
 - <b>Uptime.pm</b>
