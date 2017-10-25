@@ -13,10 +13,11 @@ This here is a fork that focuses on module development, a collection of modules 
 - <b>iSeen.pm</b> - This is a new module under development that allows users to check when other frequent users were last online. It will provide the time, date and channel the user was last seen on by Light. Channel/Privatemsg Usage: .seen <nickname> 
 
 - <b>Quotes.pm</b> - This module responds with a random quote from "<bot dir>/quotes" when user types ".quote". ".addquote" will be added as a function in the future.
+  
+  <b>Insults.pm</b> - This module insults a user you specify with a random line from "./insults". Usage .insult <nick>
 
 # Modules that came standard with Shadow:
 
-- <b>AutoID.pm</b>
 - <b>Autojoin.pm</b>
 - <b>BotStats.pm</b>
 - <b>ChanOP.pm</b>
