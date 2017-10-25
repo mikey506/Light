@@ -10,7 +10,9 @@ This here is a fork that focuses on module development, a collection of modules 
 
 - <b>NoAllah.pm</b> - This module was created to take care of the excessive spamming of religious propaganda within our channhels, although it is pretty strict, a more refined version will be created that more accurately detects if they are in fact spamming or have a discussion about islam. Once more refined it will be less likely to kick/ban a user who was merely using the word allah with no relation to spam at all.
 
-- <b>iSeen.pm</b> - This is a new script under development that allows users to check when other frequent users were last online. It will provide the time, date and channel the user was last seen on by Light. Channel/Privatemsg Usage: .seen <nickname> 
+- <b>iSeen.pm</b> - This is a new module under development that allows users to check when other frequent users were last online. It will provide the time, date and channel the user was last seen on by Light. Channel/Privatemsg Usage: .seen <nickname> 
+
+- <b>Quotes.pm</b> - This module responds with a random quote from "<bot dir>/quotes" when user types ".quote". ".addquote" will be added as a function in the future.
 
 # Modules that came standard with Shadow:
 
