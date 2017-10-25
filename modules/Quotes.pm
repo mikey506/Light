@@ -10,7 +10,7 @@ package Quotes;
 
 my $bot  = Shadow::Core;
 use File::RandomLine;
-my $rl = File::RandomLine->new( "./quotes" );
+my $rl = File::RandomLine->new( "./etc/quotes" );
 
 sub loader {
   $bot->add_handler('chancmd quote', 'doQuote');
@@ -29,7 +29,7 @@ sub doQuote {
 }
 sub doAddQuote {
   my ($nick, $host, $chan, $text) = @_;
-  $filename = 'quotes.txt';
+  $filename = '/etc/quotes';
   open(my $fh, '>>', $filename) or $bot->err($chan, "Could not open file $filename");
   print "$text\n"; 
   close $fh;
