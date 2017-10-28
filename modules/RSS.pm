@@ -33,6 +33,7 @@ use Time::Seconds;
 use Mojo::IOLoop;
 use Mojo::UserAgent;
 use XML::Feed;
+use IRC::Toolkit::Colors;
 
 my $bot      = Shadow::Core;
 my $help     = Shadow::Help;
@@ -234,7 +235,9 @@ sub rss_agrigator {
     my $read = rss_checkread($chan, $title, $entry->link());
 
     if (!$read) {
-      $bot->say($chan, "$title: ".$entry->title()." [".$entry->link()."]", 3);
+      $name = color(red, $title);
+      $title = color(green, $entry->title());
+      $bot->say($chan, "RSS: $name - ". $title ." - [ ".$entry->link()." ]", 3);
 
       push(@{$db->{$chan}->{$title}->{read}}, {
         url => $entry->link(),
