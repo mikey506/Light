@@ -13,6 +13,7 @@ Newly Added Prerequisites:
 - Sys::Info
 - File::RandomLine
 - IRC::Toolkit::Colors
+- IRC::Bot::Seen
 
 Original Prerequisites:
 
