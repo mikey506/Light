@@ -8,13 +8,13 @@ This here is a fork that focuses on module development, a collection of modules 
 
 # Prerequisites
 
-Newly Added:
+Newly Added Prerequisites:
 
 - Sys::Info
 - File::RandomLine
 - IRC::Toolkit::Colors
 
-Previous Prerequisites:
+Original Prerequisites:
 
 - Shadow::Core;
 - Shadow::Help;
@@ -22,7 +22,6 @@ Previous Prerequisites:
 - POSIX
 - Proc::ProcessTable
 - Time::Seconds
-- warnings
 - Mojo::IOLoop
 - Mojo::UserAgent
 - XML::Feed
