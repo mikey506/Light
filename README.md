@@ -41,11 +41,11 @@ Original Prerequisites:
 
 - <b>TXTctrl.pm</b> - Used to send text to channels or to users via private message. Usage (in private chat): tc (c/p) (channel/nick) (message) ==incomplete mod==
 
-- <b>Welcome.pm</b> - This mod sends a welcome message to channel if anyone that joins. Usage via private message:<b> tc (c/p) (channel/nick) (message)</b> 
+- <b>Welcome.pm</b> - This mod sends a welcome message to channel if anyone that joins.
 
 # Modules that came standard with Shadow with changes:
 - <b>Autojoin.pm</b>
-- <b>BotStats.pm</b>
+- <b>BotStats.pm</b> - Added OS information, CPU core count and CPU load info to the status
 - <b>ChanOP.pm</b> - Added ".mode" function, Usage - <b>.mode (channel) (mode) (username)</b>
 - <b>RSS.pm</b> - Added color to feed output to channel / added optional interval setting to rss add function / created space between url link and [] brackets so webclients detect url with less issues.
 - <b>URLIdentifier.pm</b> 
