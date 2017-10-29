@@ -103,22 +103,24 @@ sub rss_irc_interface {
 
   if ($command eq "add" || $command eq "ADD") {
     if (!$arg1 || !$arg2 || !$arg3) {
-      return $bot->notice($nick, "Syntax: /msg ".$Shadow::Core::nick." rss add <chan> <title> <url>");
+      return $bot->notice($nick, "Syntax: /msg ".$Shadow::Core::nick." rss add <chan> <title> <url> <interval(optional)>");
     }
 
     if ($bot->isin($arg1, $Shadow::Core::nick) && $bot->isop($nick, $arg1)) {
+      if (!$arg4) { $syncint = 300; }
+      if ($arg4) { $syncint = $arg4; }
       $db = rss_dbread();
       $db->{lc($arg1)}->{$arg2} = {
         url => $arg3,
         lastSync => 0,
-        syncInterval => 300,
+        syncInterval => $syncint,
         read => []
       };
 
       rss_dbwrite($db);
       $bot->notice($nick, "Added feed $arg2 [$arg3] for $arg1.");
-      $bot->log("RSS: New feed for $arg1 [$arg2 - $arg3] added by $nick.");
-      $bot->notice($nick, "Feed post should start appearing in $arg1 within 5 minutes.");
+      $bot->log("RSS: New feed for $arg1 [$arg2 - $arg3] ( Interval: $syncint ) added by $nick.");
+      $bot->notice($nick, "Feed post should start appearing in $arg1 within 5 minutes unless interval was set differently.");
     } else {
       $bot->notice($nick, "Command requres channel op (+o) mode.");
       $bot->log("RSS: Command denied for $nick: ADD $arg1 $arg2 :$arg3");
