@@ -6,6 +6,12 @@ This here is a fork that focuses on module development, a collection of modules 
 
 - Official Shadow Bot Repo:<b> https://github.com/ablakely/shadow </b>
 
+# Additional CPAN Prerequisites)
+
+- Sys::Info
+- File::RandomLine
+- IRC::Toolkit::Colors
+
 # Newly Added Modules:
 
 - <b>NoAllah.pm</b> - This module was created to take care of the excessive spamming of religious propaganda within our channhels, although it is pretty strict, a more refined version will be created that more accurately detects if they are in fact spamming or have a discussion about islam. Once more refined it will be less likely to kick/ban a user who was merely using the word allah with no relation to spam at all.
@@ -20,10 +26,10 @@ This here is a fork that focuses on module development, a collection of modules 
 
 - <b>Welcome.pm</b> - This mod sends a welcome message to channel if anyone that joins. Usage via private message:<b> tc (c/p) (channel/nick) (message)</b> 
 
-# Modules that came standard with Shadow:
+# Modules that came standard with Shadow with changes:
 - <b>Autojoin.pm</b>
 - <b>BotStats.pm</b>
 - <b>ChanOP.pm</b> - Added ".mode" function, Usage - <b>.mode (channel) (mode) (username)</b>
-- <b>RSS.pm</b>
+- <b>RSS.pm</b> - Added color to feed output to channel, added interval option to rss add function.
 - <b>URLIdentifier.pm</b> 
 - <b>Uptime.pm</b>
