@@ -6,11 +6,28 @@ This here is a fork that focuses on module development, a collection of modules 
 
 - Official Shadow Bot Repo:<b> https://github.com/ablakely/shadow </b>
 
-# Additional CPAN Prerequisites)
+# Prerequisites
+
+Newly Added:
 
 - Sys::Info
 - File::RandomLine
 - IRC::Toolkit::Colors
+
+Previous Prerequisites:
+
+- Shadow::Core;
+- Shadow::Help;
+- JSON
+- POSIX
+- Proc::ProcessTable
+- Time::Seconds
+- warnings
+- Mojo::IOLoop
+- Mojo::UserAgent
+- XML::Feed
+- LWP::UserAgent
+
 
 # Newly Added Modules:
 
