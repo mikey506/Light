@@ -30,6 +30,6 @@ This here is a fork that focuses on module development, a collection of modules 
 - <b>Autojoin.pm</b>
 - <b>BotStats.pm</b>
 - <b>ChanOP.pm</b> - Added ".mode" function, Usage - <b>.mode (channel) (mode) (username)</b>
-- <b>RSS.pm</b> - Added color to feed output to channel, added interval option to rss add function.
+- <b>RSS.pm</b> - Added color to feed output to channel / added optional interval setting to rss add function / created space between url link and [] brackets so webclients detect url with less issues.
 - <b>URLIdentifier.pm</b> 
 - <b>Uptime.pm</b>
