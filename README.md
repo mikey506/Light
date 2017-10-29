@@ -6,7 +6,7 @@ This here is a fork that focuses on module development, a collection of modules 
 
 - Official Shadow Bot Repo:<b> https://github.com/ablakely/shadow </b>
 
-# Prerequisites
+# Module Prerequisites
 
 Newly Added Prerequisites:
 
