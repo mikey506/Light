@@ -11,6 +11,7 @@ package BotStats;
 use POSIX;
 use Time::Seconds;
 use Proc::ProcessTable;
+use Sys::Info
 
 my $LOADTIME = time();
 my $bot      = Shadow::Core;
@@ -60,7 +61,11 @@ sub BotStats_dostatus {
 
       $bot->notice($nick, "Current Memory Usage: $mem MB");
     }
-
+    $info = Sys::Info->new;
+    $cpu = $info->device('CPU');
+    $os = $info->os;
+    $bot->say($chan, "Operating System: ". $os->name());
+    $bot->say($chan, "CPU: ". scalar($cpu->identify) ." Cores");
     my $chancount = 0;
     foreach my $m (keys %Shadow::Core::sc) {
       $chancount++;
