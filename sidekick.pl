@@ -8,13 +8,20 @@
  use IO::Socket::INET;
  use IO::Select;
 
-  my $bnick = "SideKick";
-  $fd = IO::Socket::INET->new(PeerAddr => 'irc.bbsn.ca',
-                                 PeerPort => '6667',
-                                 Proto    => 'tcp', 
-                                 Timeout => 60,);
-  print $fd "NICK $bnick \r\n";
-  print $fd "USER ternary \"\" \"\" :Real Slim Code-y\r\n";
+my $bnick = "SideKick";
+$fd = IO::Socket::INET->new(PeerAddr => 'irc.bbsn.ca',
+                               PeerPort => '6667',
+                               Proto    => 'tcp', 
+                               Timeout => 60,);
+print $fd "NICK $bnick \r\n";
+print $fd "USER ternary \"\" \"\" :Real Slim Code-y\r\n";
+sleep(3);      
+print $fd "JOIN #BBSN\n";
+print $fd "JOIN #Sysops\n";
+print $fd "JOIN #Campbellton\n";
+print $fd "JOIN #Sackville\n";
+print $fd "JOIN #Pur\n";
+print $fd "JOIN #staff\n";
 
 while ($in = <$fd>) {
   $in =~ s/\:/ /g;
@@ -49,13 +56,6 @@ while ($in = <$fd>) {
       print $fd "PART $tok[7]\n";
     }
 
-  }
-  if ($tok[1] == 003) {
-    print $fd "NICK $bnick \r\n";
-    print $fd "USER ternary \"\" \"\" :Real Slim Code-y\r\n";
-    sleep(3);      
-    print $fd "JOIN #BBSN\n";
-    print $fd "JOIN #Sysops\n";
   }
 }
 1;
