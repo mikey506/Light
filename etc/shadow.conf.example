@@ -14,7 +14,7 @@ bot.cmdchan  = "#botcmd"
 
 [Bot]
 system.daemonize	= no
-system.modules      = [RSS,ChanOP,AutoID]
+system.modules      = [URLIdentifier,Uptime,BotStats,Autojoin,RSS,ChanOP,AutoID]
 
 [Admin]
 # Comma separated list of hostnames (wildcards are accepted)
