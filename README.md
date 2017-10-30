@@ -28,8 +28,11 @@ Original Prerequisites:
 - XML::Feed
 - LWP::UserAgent
 
-# Installation
+# Installation (Debian/Ubuntu)
 
+- Install Git ( <b>sudo apt-get install git </b>)
+- Clone Repo home directory ( <b>sudo git clone https://github.com/mikey506/Light.git </b>)
+- Set permissions for bot directory (<b> sudo chown -R <user>:<user> ./Light </b>)
 - Install Build Essentials libxml-rss-perl libxml2-dev ( <b>sudo apt-get install build-essential libxml-rss-perl libxml2-dev </b>)
 - Install YAML & JSON through CPAN ( <b>sudo cpan install JSON YAML</b> )
 - Run install.pl to compile what is needed ( <b>sudo perl install.pl</b> )
