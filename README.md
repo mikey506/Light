@@ -28,6 +28,12 @@ Original Prerequisites:
 - XML::Feed
 - LWP::UserAgent
 
+# Installation
+
+- Install Build Essentials libxml-rss-perl libxml2-dev ( <b>sudo apt-get install build-essential libxml-rss-perl libxml2-dev </b>)
+- Install YAML & JSON through CPAN ( <b>sudo cpan install JSON YAML</b> )
+- Run install.pl to compile what is needed ( <b>sudo perl install.pl</b> )
+
 
 # Newly Added Modules:
 
