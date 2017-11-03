@@ -52,6 +52,8 @@ Original Prerequisites:
 
 - <b>Welcome.pm</b> - This mod sends a welcome message to channel if anyone that joins.
 
+- <b>Sillywerd.pm</b> - This is a simple module that outputs nonsense or silly words. No real value just kind of neat.
+
 # Modules that came standard with Shadow with changes:
 - <b>Autojoin.pm</b>
 - <b>BotStats.pm</b> - Added OS information, CPU core count and CPU load info to the status
