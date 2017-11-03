@@ -11,7 +11,10 @@ package BotStats;
 use POSIX;
 use Time::Seconds;
 use Proc::ProcessTable;
-use Sys::Info
+use Sys::Info;
+use Sys::CPU;
+Sys::Info::Device::CPU;
+use Sys::Info::Constants qw( :device_cpu );
 
 my $LOADTIME = time();
 my $bot      = Shadow::Core;
@@ -23,15 +26,15 @@ sub loader {
     print "       Some functions might not work as intended on other platforms.\n";
     return;
   }
-
-  $bot->add_handler('privcmd status', 'BotStats_dostatus');
+  $bot->add_handler('chancmd status', 'BotStats_dostatus');
+  $bot->add_handler('chancmd cpuinfo', 'cpuinfo');
   $help->add_help('status', 'Admin', '', 'Outputs current stats about the bot.', 1, sub {
-    my ($nick, $host, $text) = @_;
+  my ($nick, $host, $chan, $text) = @_;
 
-    $bot->say($nick, "Help for \x02STATUS\x02:");
-    $bot->say($nick, " ");
-    $bot->say($nick, "\x02status\x02 will give you details about the bot such as memory usage, number of channels, and mod count.");
-    $bot->say($nick, "\x02SYNTAX\x02: /msg $Shadow::Core::nick status");
+    $bot->say($chan, "Help for \x02STATUS\x02:");
+    $bot->say($chan, " ");
+    $bot->say($chan, "\x02status\x02 will give you details about the bot such as memory usage, number of channels, and mod count.");
+    $bot->say($chan, "\x02SYNTAX\x02: /msg $Shadow::Core::nick status");
   });
 }
 
@@ -48,41 +51,54 @@ sub memusage {
     return 0;
 }
 
+sub cpuinfo {
+  my ($nick, $host, $chan, $text) = @_;
+  my $info = Sys::Info->new;
+  my $cpu = $info->device('CPU');
+  my $os  = $info->os;
+  $bot->say($chan, "Operating System is: ".  $os->name());
+  $bot->say($chan, "CPU Cores: ". $cpu->identify());
+}
+
 sub BotStats_dostatus {
-  my ($nick, $host, $text) = @_;
+  my ($nick, $host, $chan, $text) = @_;
 
   if ($bot->isbotadmin($nick, $host)) {
-    $bot->notice($nick, "\x02*** BOT STATUS ***\x02");
+    $bot->say($chan, "\x02*** BOT STATUS ***\x02");
     my $mem = memusage();
     if ($mem) {
       $mem  = $mem / 1024;
       $mem  = $mem / 1024;
       $mem  = floor($mem);
-
-      $bot->notice($nick, "Current Memory Usage: $mem MB");
+      $bot->say($chan, "Current Memory Usage: $mem MB");
     }
-    $info = Sys::Info->new;
-    $cpu = $info->device('CPU');
-    $os = $info->os;
-    $bot->say($chan, "Operating System: ". $os->name());
-    $bot->say($chan, "CPU: ". scalar($cpu->identify) ." Cores");
+    my $info = Sys::Info->new;
+    my $cpu  = $info->device( CPU => %options );
+    my $os = $info->os;
+    my $ostype = $os->name( long => 1 );
+    my $cpucount = $cpu->count;
+    my $cpuload = $cpu->load;
+    $bot->say($chan, "Operating System: $ostype");
+    $bot->say($chan, "-CPU Info- Cores: $cpucount / Load: $cpuload % ");
+
     my $chancount = 0;
     foreach my $m (keys %Shadow::Core::sc) {
       $chancount++;
     }
 
-    $bot->notice($nick, "Currently joined in $chancount channels.");
+    $bot->say($chan, "Currently joined in $chancount channels.");
 
     my $uptime = Time::Seconds->new((time() - $^T));
-    $bot->notice($nick, "Bot Uptime: ".$uptime->pretty);
+    $bot->say($chan, "Bot Uptime: ".$uptime->pretty);
   } else {
-    $bot->notice($nick, "Access denied.");
+    $bot->notice($chan, "Access denied.");
     $bot->log("BotStats: STATUS command denied for $nick.");
   }
 }
 
 sub unloader {
-  $bot->del_handler('privcmd status', 'BotStats_dostatus');
+  $bot->del_handler('chancmd status', 'BotStats_dostatus');
+  $bot->del_handler('chancmd cpuinfo', 'cpuinfo');
   $help->del_help('status', 'Admin');
 }
 
