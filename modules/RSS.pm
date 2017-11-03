@@ -237,14 +237,20 @@ sub rss_agrigator {
     my $read = rss_checkread($chan, $title, $entry->link());
 
     if (!$read) {
-      $name = color(red, "$title");
-      $enttit = color(green, $entry->title());
-      $bot->say($chan, "(RSS) $name - $enttit - [ ". $entry->link() ." ]", 3);
-
+      $fname = color(red, $title);
+      $etitle = color(green, $entry->title());
+      $elink = $entry->link();
+#      if ($entry->link() =~ /[W|w]allflux/ || $entry->link() =~ /^[w|W]allflux/) {
+#        $bot->err("Wallflux Ad Detected in link for ( $etitle ), Skipping");
+#        goto END;
+#      }
+      $bot->say($chan, "RSS: $fname - ".$etitle." [ ".$elink." ]", 3);
       push(@{$db->{$chan}->{$title}->{read}}, {
         url => $entry->link(),
         lastRecieved => time()
-      });
+      }
+     );
+ #   END:
     } else {
       rss_updateread($chan, $title, $entry->link());
     }
