@@ -10,10 +10,8 @@ package Distance;
 }
 
 sub doDistance {
-  print "dodistance detected\n";
   my ($nick, $host, $chan, $text) = @_;
   my @fields = split / /, $text;
-  print ("fields array (c2c): (0) ". $fields[0] ." (1) ".$fields[1]." (2)  ".$fields[2]." (3)  ".$fields[3]." (4)  ".$fields[4]."\n");
   open my $fh, '<', './etc/geocities.db' or die "Cannot open file: $!\n";
   my @file = <$fh>;
   foreach $line (@file) {
@@ -31,6 +29,8 @@ sub doDistance {
       $bot->say($chan, "Found following entry in database for ( $linestr[0] ): $linestr[1] $linestr[2] ");
     }
   }
+  print $nick ." requested distance from ". $fields[0] ." to ". $fields[1] ." . Total Kilometers: ". $distance ."\n";
+  $bot->err("$nick requested distance from $fields[0] to $fields[1] Total Kilometers:  $distance");
 }
 
 sub unloader {
