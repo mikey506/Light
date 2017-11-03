@@ -29,10 +29,9 @@ sub doDistance {
       $bot->say($chan, "Found following entry in database for ( $linestr[0] ): $linestr[1] $linestr[2] ");
     }
   }
-  print $nick ." requested distance from ". $fields[0] ." to ". $fields[1] ." . Total Kilometers: ". $distance ."\n";
-  $bot->err("$nick requested distance from $fields[0] to $fields[1] Total Kilometers:  $distance");
+  print "(Distance Mod) $nick ." requested distance from ". $fields[0] ." to ". $fields[1] ." . Total Kilometers: ". $distance ."\n";
+  $bot->say($chan, "$nick requested distance from $fields[0] to $fields[1] Total Kilometers:  $distance");
 }
-
 sub unloader {
   $bot->del_handler('chancmd dist', 'doDistance');
 }
