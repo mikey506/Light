@@ -30,7 +30,7 @@ sub doDistance {
     }
   }
   print "(Distance Mod) $nick ." requested distance from ". $fields[0] ." to ". $fields[1] ." . Total Kilometers: ". $distance ."\n";
-  $bot->say($chan, "$nick requested distance from $fields[0] to $fields[1] Total Kilometers:  $distance");
+  $bot->say($chan, "$nick, your requested distance info from $fields[0] to $fields[1] - Total Kilometers:  $distance");
 }
 sub unloader {
   $bot->del_handler('chancmd dist', 'doDistance');
