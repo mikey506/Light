@@ -54,7 +54,7 @@ Original Prerequisites:
 
 - <b>Sillywerd.pm</b> - This is a simple module that outputs nonsense or silly words. No real value just kind of neat.
 
-- <b>Distance.pm</b> - This is a script that can calculate distance in kilometers based on lat/long coordinates. Usage: <b>.dist <lat1> <lon1> <lat2> <lon2></b>
+- <b>Distance.pm</b> - This is a script that can calculate distance in kilometers based on lat/long coordinates. Usage: <b>.dist (lat1) (lon1) (lat2) (lon2)</b>
 
 # Modules that came standard with Shadow with changes:
 - <b>Autojoin.pm</b>
