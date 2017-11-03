@@ -30,11 +30,12 @@ Original Prerequisites:
 
 # Installation (Debian/Ubuntu)
 
-- Install Git ( <b>sudo apt-get install git </b>)
-- Clone Repo home directory ( <b>sudo git clone https://github.com/mikey506/Light.git </b>)
-- Install Build Essentials libxml-rss-perl libxml2-dev ( <b>sudo apt-get install libxml2-dev build-essential libxml-rss-perl </b>)
-- Install YAML & JSON through CPAN ( <b>sudo cpan install JSON YAML</b> )
-- Run install.pl to compile what is needed ( <b>sudo perl install.pl</b> )
+- ( <b>sudo apt-get install git </b>) Install Git
+- ( <b>sudo git clone https://github.com/mikey506/Light.git </b>) Clone Repo home directory 
+- ( <b>sudo apt-get install libxml2-dev build-essential libxml-rss-perl </b>) Install Build Essentials libxml-rss-perl libxml2-dev
+- ( <b>sudo cpan install JSON YAML</b> ) Install YAML & JSON through CPAN
+- ( <b>sudo perl install.pl</b> ) Run install.pl to compile what is needed based on modules
+- ( <b>perl ./shadow</b> ) Load up shadow bot inside bots home folder.
 
 
 # Newly Added Modules:
