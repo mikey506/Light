@@ -12,8 +12,6 @@ use POSIX;
 use Time::Seconds;
 use Proc::ProcessTable;
 use Sys::Info;
-use Sys::CPU;
-Sys::Info::Device::CPU;
 use Sys::Info::Constants qw( :device_cpu );
 
 my $LOADTIME = time();
