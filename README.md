@@ -10,6 +10,7 @@ This here is a fork that focuses on module development, a collection of modules 
 
 Newly Added Prerequisites:
 
+- GIS::Distance
 - Sys::Info
 - File::RandomLine
 - IRC::Toolkit::Colors
