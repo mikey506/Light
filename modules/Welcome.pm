@@ -22,7 +22,7 @@ sub loader {
 sub doWelcome {
    my ($nick,$chan,$host) = @_;
    print "Activity: $_[0] joined $_[2] \n ";
-   $bot->say($_[2], "Hey $_[0] Welcome to the $_[2] IRC chatroom, feel free to idle in here in the channel or take part in dicussion." );
+   $bot->say($_[2], "Hey $_[0] Welcome to the $_[2] IRC chatroom, feel free to idle here in the channel or take part in disussion." );
    $bot->say("#Sysops", "Activity: $_[0] JOINed $_[2]");
 }
 
